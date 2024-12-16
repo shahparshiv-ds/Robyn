@@ -212,6 +212,10 @@ saturation_hill <- function(x, alpha, gamma, x_marginal = NULL) {
   stopifnot(length(alpha) == 1)
   stopifnot(length(gamma) == 1)
   inflexion <- c(range(x) %*% c(1 - gamma, gamma)) # linear interpolation by dot product
+  print("Running saturation")
+  print(inflexion)
+  print(x)
+  print(x_marginal)
   if (is.null(x_marginal)) {
     x_scurve <- x**alpha / (x**alpha + inflexion**alpha) # plot(x_scurve) summary(x_scurve)
   } else {
